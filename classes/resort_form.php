@@ -48,9 +48,6 @@ class local_resortquestioncategory_resort_form extends moodleform {
         $message = $OUTPUT->box(get_string('selectcategoryinfo', 'local_resortquestioncategory'), 'generalbox boxaligncenter');
         $mform->addElement('html', $message);
 
-        $mform->addElement('hidden', 'sesskey', sesskey());
-        $mform->setType('sesskey', PARAM_RAW);
-
         $qcontexts = new question_edit_contexts($context);
         $contexts = $qcontexts->having_cap('moodle/question:managecategory');
 
