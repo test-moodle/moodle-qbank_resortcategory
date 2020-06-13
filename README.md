@@ -32,3 +32,4 @@ Changes
     - Double capability check.
 - Release 1.1 (build 2020061300):
     - Privacy API support.
+    - Question bank tabs.
