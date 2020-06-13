@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Tool for deleting question category with question and subcategories.
+ * Tool for sorting question categories in alphabetical order.
  *
  * @package    local_resortquestioncategory
  * @copyright  2020 Vadim Dvorovenko <Vadimon@mail.ru>
@@ -27,7 +27,7 @@ namespace local_resortquestioncategory\privacy;
 defined('MOODLE_INTERNAL') || die();
 
 /**
- * Tool for deleting question category with question and subcategories.
+ * Tool for sorting question categories in alphabetical order.
  *
  * @package    local_resortquestioncategory
  * @copyright  2020 Vadim Dvorovenko <Vadimon@mail.ru>
