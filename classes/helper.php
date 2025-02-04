@@ -63,8 +63,10 @@ class helper {
         $sortorder = 1;
         foreach ($subcategories as $subcategory) {
             static::resort_category_recursive($subcategory->id, $contextid);
-            $subcategory->sortorder = $sortorder;
-            $DB->update_record('question_categories', $subcategory);
+            if ($subcategory->sortorder != $sortorder) {
+                $subcategory->sortorder = $sortorder;
+                $DB->update_record('question_categories', $subcategory);
+            }
             $sortorder++;
         }
     }
