@@ -60,7 +60,7 @@ class qbank_resortcategory_question_category_object {
         global $DB;
 
         $subcategories = $DB->get_records('question_categories',
-                array('parent' => $categoryid, 'contextid' => $contextid), 'name ASC');
+                ['parent' => $categoryid, 'contextid' => $contextid], 'name ASC');
         $sortorder = 1;
         foreach ($subcategories as $subcategory) {
             $this->resort_category_recursive($subcategory->id, $contextid);

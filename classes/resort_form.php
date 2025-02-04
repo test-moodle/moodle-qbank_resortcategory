@@ -53,7 +53,7 @@ class qbank_resortcategory_resort_form extends moodleform {
         $qcontexts = new question_edit_contexts($context);
         $contexts = $qcontexts->having_cap('moodle/question:managecategory');
 
-        $options = array();
+        $options = [];
         $options['contexts'] = $contexts;
         $options['top'] = true;
         $qcategory = $mform->addElement('questioncategory', 'category', get_string('category', 'question'), $options);
