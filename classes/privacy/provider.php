@@ -24,8 +24,6 @@
 
 namespace qbank_resortcategory\privacy;
 
-defined('MOODLE_INTERNAL') || die();
-
 /**
  * Tool for sorting question categories in alphabetical order.
  *
