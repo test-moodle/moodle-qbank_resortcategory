@@ -59,12 +59,12 @@ $PAGE->set_heading($COURSE->fullname);
 $mform = new resort_form($url, ['context' => $context]);
 
 if ($mform->is_cancelled()) {
-    redirect(new moodle_url('/question/category.php', $pageparams));
+    redirect(new moodle_url('/question/bank/managecategories/category.php', $pageparams));
 } else if ($data = $mform->get_data()) {
     require_sesskey();
     $qcobject = new question_category_object();
     $qcobject->resort_category($data->category);
-    redirect(new moodle_url('/question/category.php', $pageparams));
+    redirect(new moodle_url('/question/bank/managecategories/category.php', $pageparams));
 }
 
 echo $OUTPUT->header();
