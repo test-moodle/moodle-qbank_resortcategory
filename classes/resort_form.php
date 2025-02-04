@@ -61,7 +61,7 @@ class resort_form extends moodleform {
         $options = [];
         $options['contexts'] = $contexts;
         $options['top'] = true;
-        $qcategory = $mform->addElement('questioncategory', 'category', get_string('category', 'question'), $options);
+        $mform->addElement('questioncategory', 'category', get_string('category', 'question'), $options);
 
         $this->add_action_buttons(true, get_string('resortthiscategory', 'qbank_resortcategory'));
     }
