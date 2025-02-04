@@ -43,7 +43,7 @@ if ($cmid) {
 require_capability('moodle/question:managecategory', $context);
 
 $PAGE->set_pagelayout('admin');
-$url = new moodle_url('/local/resortquestioncategory/resort.php', $pageparams);
+$url = new moodle_url('/question/bank/resortcategory/resort.php', $pageparams);
 $PAGE->set_url($url);
 $PAGE->set_title(get_string('selectcategory', 'qbank_resortcategory'));
 $PAGE->set_heading($COURSE->fullname);

@@ -58,7 +58,7 @@ function qbank_resortcategory_extend_navigation_course(navigation_node $courseno
     if (!$questionbank) {
         return;
     }
-    $url = new moodle_url('/local/resortquestioncategory/resort.php', array('courseid' => $context->instanceid));
+    $url = new moodle_url('/question/bank/resortcategory/resort.php', array('courseid' => $context->instanceid));
     $questionbank->add(get_string('resortcategory', 'qbank_resortcategory'), $url, navigation_node::TYPE_SETTING,
             null, 'resortquestioncategory');
 }
@@ -87,7 +87,7 @@ function qbank_resortcategory_extend_settings_navigation(navigation_node $nav, c
     if (!$questionbank) {
         return;
     }
-    $url = new moodle_url('/local/resortquestioncategory/resort.php', array('cmid' => $context->instanceid));
+    $url = new moodle_url('/question/bank/resortcategory/resort.php', array('cmid' => $context->instanceid));
     $questionbank->add(get_string('resortcategory', 'qbank_resortcategory'), $url, navigation_node::TYPE_SETTING,
             null, 'resortquestioncategory');
 }
