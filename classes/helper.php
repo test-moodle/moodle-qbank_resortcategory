@@ -33,20 +33,20 @@ use context;
  * @copyright  2016 Vadim Dvorovenko <Vadimon@mail.ru>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class question_category_object {
+class helper {
 
     /**
      * Sort category and all subcategories.
      *
      * @param string $categorypluscontext
      */
-    public function resort_category($categorypluscontext) {
+    public static function resort_category($categorypluscontext) {
         $parts = explode(',', $categorypluscontext);
         $categoryid = $parts[0];
         $contextid = $parts[1];
         $context = context::instance_by_id($contextid);
         require_capability('moodle/question:managecategory', $context);
-        $this->resort_category_recursive($categoryid, $contextid);
+        static::resort_category_recursive($categoryid, $contextid);
     }
 
     /**
@@ -55,14 +55,14 @@ class question_category_object {
      * @param int $categoryid
      * @param int $contextid
      */
-    private function resort_category_recursive($categoryid, $contextid) {
+    private static function resort_category_recursive($categoryid, $contextid) {
         global $DB;
 
         $subcategories = $DB->get_records('question_categories',
                 ['parent' => $categoryid, 'contextid' => $contextid], 'name ASC');
         $sortorder = 1;
         foreach ($subcategories as $subcategory) {
-            $this->resort_category_recursive($subcategory->id, $contextid);
+            static::resort_category_recursive($subcategory->id, $contextid);
             $subcategory->sortorder = $sortorder;
             $DB->update_record('question_categories', $subcategory);
             $sortorder++;
