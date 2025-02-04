@@ -22,10 +22,9 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die();
+namespace qbank_resortcategory;
 
-require_once("$CFG->dirroot/question/category_class.php");
-require_once("$CFG->dirroot/lib/questionlib.php");
+use context;
 
 /**
  * Helper classClass for working with question category
@@ -34,7 +33,7 @@ require_once("$CFG->dirroot/lib/questionlib.php");
  * @copyright  2016 Vadim Dvorovenko <Vadimon@mail.ru>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class qbank_resortcategory_question_category_object {
+class question_category_object {
 
     /**
      * Sort category and all subcategories.
