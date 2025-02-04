@@ -17,7 +17,7 @@
 /**
  * Tool for sorting question categories in alphabetical order.
  *
- * @package    local_resortquestioncategory
+ * @package    qbank_resortcategory
  * @copyright  2016 Vadim Dvorovenko <Vadimon@mail.ru>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -30,11 +30,11 @@ require_once("$CFG->dirroot/lib/questionlib.php");
 /**
  * Helper classClass for working with question category
  *
- * @package    local_resortquestioncategory
+ * @package    qbank_resortcategory
  * @copyright  2016 Vadim Dvorovenko <Vadimon@mail.ru>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class local_resortquestioncategory_question_category_object {
+class qbank_resortcategory_question_category_object {
 
     /**
      * Sort category and all subcategories.

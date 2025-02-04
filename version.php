@@ -17,14 +17,14 @@
 /**
  * Tool for sorting question categories in alphabetical order.
  *
- * @package    local_resortquestioncategory
+ * @package    qbank_resortcategory
  * @copyright  2016 Vadim Dvorovenko <Vadimon@mail.ru>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->component = 'local_resortquestioncategory';
+$plugin->component = 'qbank_resortcategory';
 $plugin->version   = 2020061300;
 $plugin->release = '1.1';
 $plugin->maturity = MATURITY_STABLE;

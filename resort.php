@@ -17,7 +17,7 @@
 /**
  * Tool for sorting question categories in alphabetical order.
  *
- * @package    local_resortquestioncategory
+ * @package    qbank_resortcategory
  * @copyright  2016 Vadim Dvorovenko <Vadimon@mail.ru>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -45,16 +45,16 @@ require_capability('moodle/question:managecategory', $context);
 $PAGE->set_pagelayout('admin');
 $url = new moodle_url('/local/resortquestioncategory/resort.php', $pageparams);
 $PAGE->set_url($url);
-$PAGE->set_title(get_string('selectcategory', 'local_resortquestioncategory'));
+$PAGE->set_title(get_string('selectcategory', 'qbank_resortcategory'));
 $PAGE->set_heading($COURSE->fullname);
 
-$mform = new local_resortquestioncategory_resort_form($url, array('context' => $context));
+$mform = new qbank_resortcategory_resort_form($url, array('context' => $context));
 
 if ($mform->is_cancelled()) {
     redirect(new moodle_url('/question/category.php', $pageparams));
 } else if ($data = $mform->get_data()) {
     require_sesskey();
-    $qcobject = new local_resortquestioncategory_question_category_object();
+    $qcobject = new qbank_resortcategory_question_category_object();
     $qcobject->resort_category($data->category);
     redirect(new moodle_url('/question/category.php', $pageparams));
 }
@@ -67,6 +67,6 @@ if ($CFG->version >= 2016120503.00) { // Moodle 3.2.3.
     echo $renderer->extra_horizontal_navigation();
 }
 
-echo $OUTPUT->heading(get_string('resortcategory', 'local_resortquestioncategory'));
+echo $OUTPUT->heading(get_string('resortcategory', 'qbank_resortcategory'));
 $mform->display();
 echo $OUTPUT->footer();

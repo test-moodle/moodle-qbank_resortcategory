@@ -17,7 +17,7 @@
 /**
  * Tool for sorting question categories in alphabetical order.
  *
- * @package    local_resortquestioncategory
+ * @package    qbank_resortcategory
  * @copyright  2016 Vadim Dvorovenko <Vadimon@mail.ru>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -31,9 +31,9 @@ defined('MOODLE_INTERNAL') || die;
  * @param stdClass $course frontpage course object
  * @param context $context frontpage course context object
  */
-function local_resortquestioncategory_extend_navigation_frontpage(navigation_node $coursenode, stdClass $course,
+function qbank_resortcategory_extend_navigation_frontpage(navigation_node $coursenode, stdClass $course,
         context $context) {
-    local_resortquestioncategory_extend_navigation_course($coursenode, $course, $context);
+    qbank_resortcategory_extend_navigation_course($coursenode, $course, $context);
 }
 
 /**
@@ -43,7 +43,7 @@ function local_resortquestioncategory_extend_navigation_frontpage(navigation_nod
  * @param stdClass $course course object
  * @param context $context course context object
  */
-function local_resortquestioncategory_extend_navigation_course(navigation_node $coursenode, stdClass $course,
+function qbank_resortcategory_extend_navigation_course(navigation_node $coursenode, stdClass $course,
         context $context) {
     if (!has_capability('moodle/question:managecategory', $context)) {
         return;
@@ -59,7 +59,7 @@ function local_resortquestioncategory_extend_navigation_course(navigation_node $
         return;
     }
     $url = new moodle_url('/local/resortquestioncategory/resort.php', array('courseid' => $context->instanceid));
-    $questionbank->add(get_string('resortcategory', 'local_resortquestioncategory'), $url, navigation_node::TYPE_SETTING,
+    $questionbank->add(get_string('resortcategory', 'qbank_resortcategory'), $url, navigation_node::TYPE_SETTING,
             null, 'resortquestioncategory');
 }
 
@@ -69,7 +69,7 @@ function local_resortquestioncategory_extend_navigation_course(navigation_node $
  * @param navigation_node $nav navigation node object
  * @param context $context course context object
  */
-function local_resortquestioncategory_extend_settings_navigation(navigation_node $nav, context $context) {
+function qbank_resortcategory_extend_settings_navigation(navigation_node $nav, context $context) {
     if (!has_capability('moodle/question:managecategory', $context)) {
         return;
     }
@@ -88,6 +88,6 @@ function local_resortquestioncategory_extend_settings_navigation(navigation_node
         return;
     }
     $url = new moodle_url('/local/resortquestioncategory/resort.php', array('cmid' => $context->instanceid));
-    $questionbank->add(get_string('resortcategory', 'local_resortquestioncategory'), $url, navigation_node::TYPE_SETTING,
+    $questionbank->add(get_string('resortcategory', 'qbank_resortcategory'), $url, navigation_node::TYPE_SETTING,
             null, 'resortquestioncategory');
 }

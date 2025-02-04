@@ -17,7 +17,7 @@
 /**
  * Tool for sorting question categories in alphabetical order.
  *
- * @package    local_resortquestioncategory
+ * @package    qbank_resortcategory
  * @copyright  2016 Vadim Dvorovenko <Vadimon@mail.ru>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -29,11 +29,11 @@ require_once($CFG->libdir . '/formslib.php');
 /**
  * Form for selection of category to resort.
  *
- * @package    local_resortquestioncategory
+ * @package    qbank_resortcategory
  * @copyright  2016 Vadim Dvorovenko <Vadimon@mail.ru>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class local_resortquestioncategory_resort_form extends moodleform {
+class qbank_resortcategory_resort_form extends moodleform {
 
     /**
      * Form definition.
@@ -45,9 +45,9 @@ class local_resortquestioncategory_resort_form extends moodleform {
 
         $context = $this->_customdata['context'];
 
-        $mform->addElement('header', 'header', get_string('selectcategory', 'local_resortquestioncategory'));
+        $mform->addElement('header', 'header', get_string('selectcategory', 'qbank_resortcategory'));
 
-        $message = $OUTPUT->box(get_string('selectcategoryinfo', 'local_resortquestioncategory'), 'generalbox boxaligncenter');
+        $message = $OUTPUT->box(get_string('selectcategoryinfo', 'qbank_resortcategory'), 'generalbox boxaligncenter');
         $mform->addElement('html', $message);
 
         $qcontexts = new question_edit_contexts($context);
@@ -58,7 +58,7 @@ class local_resortquestioncategory_resort_form extends moodleform {
         $options['top'] = true;
         $qcategory = $mform->addElement('questioncategory', 'category', get_string('category', 'question'), $options);
 
-        $this->add_action_buttons(true, get_string('resortthiscategory', 'local_resortquestioncategory'));
+        $this->add_action_buttons(true, get_string('resortthiscategory', 'qbank_resortcategory'));
     }
 
 }

@@ -21,8 +21,8 @@ Author
 
 Links
 -----
-- Updates: https://moodle.org/plugins/view.php?plugin=local_resortquestioncategory
-- Latest code: https://github.com/vadimonus/moodle-local_resortquestioncategory
+- Updates: https://moodle.org/plugins/view.php?plugin=qbank_resortcategory
+- Latest code: https://github.com/vadimonus/moodle-qbank_resortcategory
 
 Changes
 -------
