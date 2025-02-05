@@ -31,7 +31,7 @@ use qbank_resortcategory\helper;
 use qbank_resortcategory\resort_form;
 
 require_login();
-core_question_local_bank_helper::require_plugin_enabled('qbank_quickrenamecategories');
+core_question_local_bank_helper::require_plugin_enabled('qbank_resortcategory');
 
 $cmid = optional_param('cmid', 0, PARAM_INT);
 if ($cmid) {
